@@ -10,6 +10,7 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
         port: process.env.PORT,
         app_url: process.env.APP_URL,
         secret: process.env.APP_SECRET,
+        request_host: req.header('host'),
     }
     res.status(200).json(config);
 });
